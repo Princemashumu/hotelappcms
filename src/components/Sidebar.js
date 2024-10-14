@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { List, ListItem, ListItemText, ListItemIcon, Divider, Box } from '@mui/material';
 import { AiFillHome } from 'react-icons/ai'; // Home icon
-import {FaBook, FaPhotoVideo } from 'react-icons/fa'; // Users, Bookings, Gallery icons
+import { FaBook, FaPhotoVideo, FaUsers, FaEnvelope } from 'react-icons/fa'; // Added FaEnvelope for Emails
 import { GiBed } from 'react-icons/gi'; // Rooms icon
 import { IoSettingsSharp } from 'react-icons/io5'; // Settings icon
+import { MdRateReview } from 'react-icons/md'; // Reviews icon
 
 function Sidebar() {
   return (
@@ -33,12 +34,12 @@ function Sidebar() {
         </ListItem>
 
         {/* Users */}
-        {/* <ListItem button component={Link} to="/users">
+        <ListItem button component={Link} to="/users">
           <ListItemIcon>
             <FaUsers />
           </ListItemIcon>
           <ListItemText primary="Users" />
-        </ListItem> */}
+        </ListItem>
 
         {/* Bookings */}
         <ListItem button component={Link} to="/bookings">
@@ -57,12 +58,12 @@ function Sidebar() {
         </ListItem>
 
         {/* Reviews */}
-        {/* <ListItem button component={Link} to="/reviews">
+        <ListItem button component={Link} to="/reviews">
           <ListItemIcon>
             <MdRateReview />
           </ListItemIcon>
           <ListItemText primary="Reviews" />
-        </ListItem> */}
+        </ListItem>
 
         {/* Gallery */}
         <ListItem button component={Link} to="/gallery">
@@ -70,6 +71,14 @@ function Sidebar() {
             <FaPhotoVideo />
           </ListItemIcon>
           <ListItemText primary="Gallery" />
+        </ListItem>
+
+        {/* Emails */}
+        <ListItem button component={Link} to="/messages">
+          <ListItemIcon>
+            <FaEnvelope />
+          </ListItemIcon>
+          <ListItemText primary="Emails" />
         </ListItem>
       </List>
 

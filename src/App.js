@@ -9,7 +9,7 @@ import Reviews from './pages/Reviews';
 import Gallery from './pages/Gallery';
 import Settings from './pages/Settings';
 import LoginPage from './pages/LoginPage'; // Import your login page component
-
+import Messages from './pages/Messages'
 function App() {
   return (
     <Router>
@@ -25,6 +25,7 @@ function App() {
         <Route path="/reviews" element={<Layout><Reviews /></Layout>} />
         <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
         <Route path="/settings" element={<Layout><Settings /></Layout>} />
+        <Route path="/messages" element={<Layout><Messages /></Layout>} />
       </Routes>
     </Router>
   );

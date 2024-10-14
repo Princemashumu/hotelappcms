@@ -13,7 +13,7 @@ function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'Users')); // 'Users' is the Firestore collection name
+        const querySnapshot = await getDocs(collection(db, 'User')); // 'User' is the Firestore collection name
         const userData = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data(),
@@ -32,7 +32,7 @@ function Users() {
 
   const handleBlockUser = async (userId) => {
     try {
-      const userDocRef = doc(db, 'Users', userId);
+      const userDocRef = doc(db, 'User', userId);
       await updateDoc(userDocRef, { status: 'blocked' }); // Assuming 'status' is a field to indicate user status
       setUsers(users.map(user => 
         user.id === userId ? { ...user, status: 'blocked' } : user
@@ -46,7 +46,7 @@ function Users() {
   const handleDeleteUser = async () => {
     try {
       if (userToDelete) {
-        await deleteDoc(doc(db, 'Users', userToDelete));
+        await deleteDoc(doc(db, 'User', userToDelete));
         setUsers(users.filter(user => user.id !== userToDelete));
         setUserToDelete(null);
         setOpenConfirmDialog(false);
@@ -83,7 +83,6 @@ function Users() {
             <TableHead>
               <TableRow>
                 <TableCell>ID</TableCell>
-                <TableCell>Name</TableCell>
                 <TableCell>Email</TableCell>
                 <TableCell>Actions</TableCell>
               </TableRow>
@@ -92,7 +91,6 @@ function Users() {
               {users.map((user) => (
                 <TableRow key={user.id}>
                   <TableCell>{user.id}</TableCell>
-                  <TableCell>{user.name || 'N/A'}</TableCell>
                   <TableCell>{user.email || 'N/A'}</TableCell>
                   <TableCell>
                     <Button
