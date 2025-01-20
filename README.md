@@ -1,7 +1,9 @@
 # Hotel CMS 🏨
-https://hotelappcms.vercel.app/
+
 This is a Hotel Content Management System (CMS) built with **React** and **React Router**. The application allows admins to manage different aspects of a hotel, including users, bookings, rooms, reviews, gallery, settings, and messages.
 
+
+https://hotelappcms.vercel.app/
 ## Features ✨
 
 - **Login Page**: Secure authentication for hotel admins.
