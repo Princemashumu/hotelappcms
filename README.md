@@ -19,8 +19,14 @@ This is a Hotel Content Management System (CMS) built with **React** and **React
 To get started, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/hotel-cms.git
-cd hotel-cms
+git clone https://github.com/princemashumu/hotelcms.git
+```
+
+## Installation
+```
+cd hotelcms
+```
+```
 npm install
 ```
 
